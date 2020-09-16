@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="subPage">
     <div class="row justify-content-md-center">
       <div class="col-md-8 text-titulo">
         <h4>Decifre los sellos (punteros rojos)</h4>
@@ -39,10 +39,14 @@
             <div class="row bloque-valido">
                 <p class="col-10">El sello ha sido liberado. Tienes acceso a ver el contenido detras de la puerta</p>
                 <div class="col-10">
-                    <button type="button" class="btn btn-secondary">Ver el contenido</button>
+                    <button type="button" (click)="verContenido()" class="btn btn-secondary">Ver el contenido</button>
                 </div>
                 
             </div>
         </div>
     </div>
   </div>
+  <div *ngIf="!subPage">
+    <router-outlet></router-outlet>
+  </div>
+  

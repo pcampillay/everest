@@ -62,7 +62,6 @@ const numRamdom = (a,b) =>  Math.round(Math.random()*(b-a)+parseInt(a));
 //Valid Catpcha
 exports.ValidCaptcha = async function (req, res) {
     try {
-        console.log(req.body);
         let id = req.body.id;
         let code = req.body.code;
 

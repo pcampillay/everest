@@ -17,6 +17,6 @@ export class HomeComponent implements OnInit {
   }
 
   clickDoor(id:any) {
-    this.router.navigate(['/captcha/',id]);
+    this.router.navigate(['/pageCaptcha/',id]);
   }
 }
