@@ -18,44 +18,22 @@
         </div>
         <div class="col-10">
             <div class="row box-sellos">
-                <div class="col-3">
+                <div class="col-3" *ngFor="let spark of sparks ; let i = index">
 
                     <div class="row">
-                        <a class="" (click)="clickReturn(1)">
-                            <img class="img-return" src="assets/img/return.png">
+                        <a class="" (click)="rotateReturn(spark, i)">
+                            <img class="img-return"  src="assets/img/return.png">
                         </a>
                         <a class="">
-                            <img class="img-spark" src="assets/img/spark2.png">
+                            <img class="img-spark" [ngStyle]="{'transform': setTransformSpark(spark)}" src="assets/img/spark2.png">
                         </a>
-                        <a class="" (click)="clickAdvance(1)">
+                        <a class="" (click)="rotateAdvance(spark,i)">
                             <img class="img-return2" src="assets/img/return.png">
                         </a>
                     </div>
                 </div>
 
 
-
-
-
-
-
-
-
-                  <div class="col-3">
-                    <a class="" (click)="clickDoor(1)">
-                        <img class="img-spark" src="assets/img/spark2.png">
-                      </a>
-                  </div>
-                  <div class="col-3">
-                    <a class="" (click)="clickDoor(2)">
-                        <img class="img-spark" src="assets/img/spark2.png">
-                      </a>
-                  </div>
-                  <div class="col-3">
-                    <a class="" (click)="clickDoor(3)">
-                        <img class="img-spark" src="assets/img/spark2.png">
-                    </a>
-                  </div>
             </div>
         </div>
     </div>

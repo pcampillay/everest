@@ -10,12 +10,9 @@ import { ApiService } from '../api.service';
 export class CaptchaComponent implements OnInit {
 
   captcha :any;
-  upload1: any = 0;
-  upload2: any = 0;
-  upload3: any = 0;
-  upload4: any = 0;
 
   uploads: any = [];
+  sparks: any = [0,0,0,0];
 
   spark1:any = 0;
   spark2:any = 0;
@@ -35,10 +32,6 @@ export class CaptchaComponent implements OnInit {
       this.captcha = data;
       let obj = JSON.parse(this.captcha.result.code);
       console.log(obj);
-      this.upload1 = obj.p1 *90;
-      this.upload2 = obj.p2 *90;
-      this.upload3 = obj.p3 *90;
-      this.upload4 = obj.p4 *90;
 
      this.uploads.push(obj.p1 *90);
      this.uploads.push(obj.p2 *90);
@@ -48,14 +41,20 @@ export class CaptchaComponent implements OnInit {
     });
   }
 
-  clickDoor(id:any) {
-   
-  }
-  rotateUpload(upload){
-
-  }
 
   setTransform(upload){
     return 'rotate('+upload+'deg)';
+  }
+
+  setTransformSpark(spark){
+    return 'rotate('+spark+'deg)';
+  }
+
+  rotateReturn(spark, index){
+    this.sparks[index] = spark - 90;
+  }
+
+  rotateAdvance(spark, index){
+    this.sparks[index] = spark + 90;
   }
 }
