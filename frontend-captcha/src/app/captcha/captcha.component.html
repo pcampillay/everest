@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row justify-content-md-center">
       <div class="col-md-8 text-titulo">
-        <h4>Decifre los sellos</h4>
+        <h4>Decifre los sellos (punteros rojos)</h4>
       </div>
     </div>
     <div class="row">
@@ -10,9 +10,10 @@
                 <div class="col-12">
                     <p class="text-center">Sello a decifrar</p>
                 </div>
-
-                <div class="col-12" *ngFor="let upload of uploads;">
-                    <img class="img-upload" [ngStyle]="{'transform': setTransform(upload)}" src="assets/img/upload.png">
+                <div class="bloque-upload">
+                    <div class="col-12"  *ngFor="let upload of uploads;">
+                        <img class="img-upload" [ngStyle]="{'transform': setTransform(upload)}" src="assets/img/upload.png">
+                    </div>
                 </div>
             </div>
         </div>
@@ -25,15 +26,22 @@
                             <img class="img-return"  src="assets/img/return.png">
                         </a>
                         <a class="">
-                            <img class="img-spark" [ngStyle]="{'transform': setTransformSpark(spark)}" src="assets/img/spark2.png">
+                            <img class="img-spark" [ngStyle]="{'transform': setTransform(spark)}" src="assets/img/spark2.png">
                         </a>
                         <a class="" (click)="rotateAdvance(spark,i)">
                             <img class="img-return2" src="assets/img/return.png">
                         </a>
                     </div>
                 </div>
-
-
+            </div>
+        </div>
+        <div class="col-10 offset-md-3" *ngIf="condition">
+            <div class="row bloque-valido">
+                <p class="col-10">El sello ha sido liberado. Tienes acceso a ver el contenido detras de la puerta</p>
+                <div class="col-10">
+                    <button type="button" class="btn btn-secondary">Ver el contenido</button>
+                </div>
+                
             </div>
         </div>
     </div>
