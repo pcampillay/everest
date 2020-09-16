@@ -1,6 +1,6 @@
 # captcha-test
 
-# Test Secure captcha
+## Test Secure captcha
 
 # New Features!
 
