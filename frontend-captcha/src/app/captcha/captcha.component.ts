@@ -10,6 +10,17 @@ import { ApiService } from '../api.service';
 export class CaptchaComponent implements OnInit {
 
   captcha :any;
+  upload1: any = 0;
+  upload2: any = 0;
+  upload3: any = 0;
+  upload4: any = 0;
+
+  uploads: any = [];
+
+  spark1:any = 0;
+  spark2:any = 0;
+  spark3:any = 0;
+  spark4:any = 0;
 
   constructor(
     private apiService: ApiService,
@@ -22,8 +33,29 @@ export class CaptchaComponent implements OnInit {
     console.log(id);
     this.apiService.generatorCatpcha(id).subscribe(data => {
       this.captcha = data;
-      console.log(this.captcha);
+      let obj = JSON.parse(this.captcha.result.code);
+      console.log(obj);
+      this.upload1 = obj.p1 *90;
+      this.upload2 = obj.p2 *90;
+      this.upload3 = obj.p3 *90;
+      this.upload4 = obj.p4 *90;
+
+     this.uploads.push(obj.p1 *90);
+     this.uploads.push(obj.p2 *90);
+     this.uploads.push(obj.p3 *90);
+     this.uploads.push(obj.p4 *90);
+
     });
   }
 
+  clickDoor(id:any) {
+   
+  }
+  rotateUpload(upload){
+
+  }
+
+  setTransform(upload){
+    return 'rotate('+upload+'deg)';
+  }
 }

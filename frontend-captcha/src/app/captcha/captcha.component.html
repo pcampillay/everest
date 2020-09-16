@@ -10,17 +10,9 @@
                 <div class="col-12">
                     <p class="text-center">Sello a decifrar</p>
                 </div>
-                <div class="col-12">
-                    <img class="img-upload" src="assets/img/upload.png">
-                </div>
-                <div class="col-12">
-                    <img class="img-upload" src="assets/img/upload.png">
-                </div>
-                <div class="col-12">
-                    <img class="img-upload" src="assets/img/upload.png">
-                </div>
-                <div class="col-12">
-                    <img class="img-upload" src="assets/img/upload.png">
+
+                <div class="col-12" *ngFor="let upload of uploads;">
+                    <img class="img-upload" [ngStyle]="{'transform': setTransform(upload)}" src="assets/img/upload.png">
                 </div>
             </div>
         </div>
