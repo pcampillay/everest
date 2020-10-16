@@ -48,6 +48,9 @@ export class PageCaptchaComponent implements OnInit {
   }
 
   rotateAdvance(spark, index){
+    if(spark === 360){
+      spark = 0;
+    }
     this.sparks[index] = spark + 90;
     this.validUpload();
   }

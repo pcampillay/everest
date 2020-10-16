@@ -14,8 +14,8 @@ app.get('/api/', function (req, res) {
   res.send('Hello World!');
 });
 
-//const uri = 'mongodb://192.168.1.109:27017/pablo_captcha';
-const uri = "mongodb+srv://pablo:Q4RiLiZitXiZ87VN@development-kv9ot.azure.mongodb.net/captcha_pablo?retryWrites=true&w=majority"
+const uri = 'mongodb://localhost:27017/pablo_captcha';
+//const uri = "mongodb+srv://pablo:Q4RiLiZitXiZ87VN@development-kv9ot.azure.mongodb.net/captcha_pablo?retryWrites=true&w=majority"
 
 const dbConf = {
     useNewUrlParser: true,
